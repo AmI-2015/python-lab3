@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>YAMP</title>
+</head>
+<body>
+	<h1>Details about {{ track.data['title'] }}</h1>
+	<ul>
+		{% for key in track.data %}
+		<li>{{ key }}: {{ track.data[key] }}</li>
+		{% endfor %}
+	</ul>
+
+	<form action="{{ url_for('play', id=track.id) }}" method='POST'>
+	  <input type='submit' value='Play'>
+	</form>
+
+	<form action="{{ url_for('stop', id=track.id) }}" method='POST'>
+	  <input type='submit' value='Stop'>
+	</form>
+
+	<a href="{{ url_for('index') }}">Back to home</a>
+
+</body>
+</html>

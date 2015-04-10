@@ -1,0 +1,15 @@
+<html>
+<head>
+<title>YAMP</title>
+</head>
+<body>
+	<h1>Tracks</h1>
+	<ul>
+		{% for track in tracks %}
+		<li>{{ track.id }} - {{ track.data['title'] }},
+			<a href="{{ url_for('show', id=track.id) }}">more...</a></li>
+		{% endfor %}
+	</ul>
+
+</body>
+</html>
